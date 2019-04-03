@@ -1,0 +1,510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Tempo-Responsive Email Template</title>
+      <style>
+          /*nav*/
+        .main_cta img { width: 100%; height: auto !important; }
+            @media only screen and (max-width: 599px) {
+            table[class=pattern] .main_nav .nav_block1,
+            table[class=pattern] .main_nav .nav_block2,
+            table[class=pattern] .main_nav .nav_block3
+            {
+                padding-left: 20px !important;
+            }
+            table[class=pattern] .main_nav .nav_block1.first {
+                padding-left: 0 !important;
+            }
+            table[class=pattern] .sub_nav a {
+                display: block;
+                width: 100%;
+                padding: 16px 0;
+                border-bottom: 1px solid #cccccc;
+                color: #000000;
+                font-size: 16px;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            table[class=pattern] .sub_nav tr:last-child a {
+                border-bottom: 0;
+            }
+        }
+        @media only screen and (max-width: 486px) {
+            table[class=pattern] .main_nav { padding: 20px 0 !important;}
+            table[class=pattern] .main_nav .nav_block1,
+            table[class=pattern] .main_nav .nav_block2
+            {
+                font-size: 14px !important;
+            }
+            table[class=pattern] .main_nav .nav_block3, table[class=pattern] .sub_nav .sub_nav_block2 { display: none; }
+            table[class=pattern] .sub_nav td { display: table-cell !important; width: auto !important; height: auto !important; max-height: auto !important; float: none !important; }
+            table[class=pattern] .sub_nav { padding: 0 12px; }
+        }
+        @media only screen and (max-width: 346px) {
+            table[class=pattern] .main_nav .nav_block1 { font-size: 16px !important; }
+            table[class=pattern] .main_nav .nav_block2 { display: none; }
+            table[class=pattern] .sub_nav .sub_nav_block2 { display: table-row; }
+        }
+        /*with button image*/
+        @media only screen and (max-width: 599px) {
+            table { width: 100%; }
+            td[class=container] {
+                background-size: auto 100%;
+                background-position: center top;
+                width: 100%;
+                height: auto;
+                min-height: 200px;
+                padding-top: 100px !important;
+            }
+            td[class=spacer] { display: none; height: 0;}
+        }
+        /*three col*/
+        @media only screen and (max-width: 599px) {
+            td[class="pattern"] img {
+                width: 100%;
+                height: auto !important;
+            }
+            td[class="pattern"] .col {
+                width: 25%;
+            }
+	    }
+        @media only screen and (max-width: 430px) {
+            td[class="pattern"] .col {
+                width: 50%;
+                float: left;
+                margin-bottom: 20px;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            td[class="pattern"] .col table,
+            td[class="pattern"] .col img { width: 100%; }
+            td[class="pattern"] .col {
+                width: 100%;
+                display: block;
+                float: none;
+                padding: 0 !important;
+            }
+            td[class="pattern"] .col tr {
+                display: table-cell;
+                width: 60%;
+            }
+            td[class="pattern"] .col tr:first-child {
+                width: 40%;
+                padding-right: 20px;
+            }
+            td[class="pattern"] .col td {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (max-width: 380px) {
+            td[class="pattern"] .col {
+                width: 100%;
+                display: block;
+                float: none;
+                padding: 0 !important;
+            }
+            td[class="pattern"] .col tr {
+                display: table-cell;
+                width: 60%;
+            }
+            td[class="pattern"] .col tr:first-child {
+                width: 40%;
+                padding-right: 20px;
+            }
+            td[class="pattern"] .col td {
+                font-size: 16px !important;
+            }
+        }
+        /*nine image*/
+        @media only screen and (max-width: 599px) {
+            td[class="grid-block"] table { width: 100%; }
+            td[class="grid-block"] .spacer { display: none; }
+            td[class="grid-block"] .row { padding: 0 !important; }
+            td[class="grid-block"] .section {
+                display: block;
+                float: left;
+                height: auto;
+                padding: 60px 20px;
+                margin-bottom: 8px;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            td[class="grid-block"] .section.half {
+                width: 49%;
+            }
+            td[class="grid-block"] .section.quarter {
+                width: 23.5%;
+            }
+            td[class="grid-block"] .section.half:first-child,
+            td[class="grid-block"] .section.quarter:first-child,
+            td[class="grid-block"] .section.quarter + .spacer + .section.half { margin-right: 2%; }
+            td[class="grid-block"] .section.full {
+                width: 100%;
+            }
+	    }
+        @media only screen and (max-width: 420px) {
+            td[class="grid-block"] .section.half,
+            td[class="grid-block"] .section.quarter {
+                width: 100%;
+            }
+            td[class="grid-block"] .section.half:first-child { margin-right: 0; }
+        }
+        /*two col*/
+        @media only screen and (max-width: 599px) {
+            td[class="pattern"] img,
+            td[class="pattern"] table { width: 100%; }
+            td[class="pattern"] img {
+                width: 100%;
+                height: auto !important;
+            }
+            td[class="pattern"] .col td {
+                width: 70%;
+                padding-right: 0 !important;
+            }
+            td[class="pattern"] .col td:first-child {
+                width: 30%;
+            }
+	    }
+        @media only screen and (max-width: 450px) {
+            td[class="pattern"] .col p { display: none; }
+        }
+      </style>
+   </head>
+   <body>
+        <table cellpadding="0" cellspacing="0" class="pattern" align="center" bgcolor="#e1f2f0">
+            <tr>
+                <td class="main_nav" width="600" style="padding-top: 10px; padding-bottom: 10px;">
+                    <table cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td class="nav_block1 first" align="center" style="font-family: arial,sans-serif; font-size: 12px; font-weight: bold;">
+                                <a href="http://www.twinsceramicstudio.com/" style="text-decoration: none; color: #000000;"><img src="http://www.twinsceramicstudio.com/emailmarket/logo/logo.png" width="50" alt=""></a>
+                            </td>
+                            <td class="nav_block1" align="center" style="padding-left: 40px; font-family: arial,sans-serif; font-size: 14; font-weight: bold;">
+                                <a href="http://www.twinsceramicstudio.com/plates.html" style="text-decoration: none; color: #000000;">Plates</a>
+                            </td>
+                            <td class="nav_block1" align="center" style="padding-left: 40px; font-family: arial,sans-serif; font-size: 14; font-weight: bold;">
+                                <a href="http://www.twinsceramicstudio.com/bowls.html" style="text-decoration: none; color: #000000;">Bowls</a>
+                            </td>
+                            <td class="nav_block2" align="center" style="padding-left: 40px; font-family: arial,sans-serif; font-size: 14; font-weight: bold;">
+                                <a href="http://www.twinsceramicstudio.com/others.html" style="text-decoration: none; color: #000000;">Others</a>
+                            </td>
+                            <td class="nav_block2" align="center" style="padding-left: 40px; font-family: arial,sans-serif; font-size: 14; font-weight: bold;">
+                                <a href="http://www.twinsceramicstudio.com/contact.html" style="text-decoration: none; color: #000000;">Contact us</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td class="container" background="http://www.twinsceramicstudio.com/emailmarket/logo/main.jpg" width="600" height="448" style="background-position: center top;">
+                  <table cellpadding="0" cellspacing="0">
+                      <tr>
+                          <td class="spacer" height="298">&nbsp;</td>
+                      </tr>
+                      <tr>
+                          <td class="inner-container" width="600" height="150" align="left" valign="top" style="background-color: #ccc; background: rgba(30,30,30,0.7);">
+                              <table cellpadding="0" cellspacing="0">
+                                  <tr>
+                                      <td align="left" style="padding: 14px 16px 10px 16px; font-family: arial,sans-serif; font-size: 16px; line-height: 22px; color: #fff;">
+                                        Designed and made by Twins Ceramic Studio, this brand new ceramic plate is with fashion-forward colours for statement looks.
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                      <td align="right" style="padding: 0 16px 14px 16px; font-family: arial,sans-serif; font-size: 14px; font-weight: bold;">
+                                          <a href="http://www.twinsceramicstudio.com/" style="text-decoration: none; color: #fff; display: block; padding: 0 5px; width: 100px; text-align: center; line-height: 40px; background: #b61528;">Shop Now</a>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </td>
+                      </tr>
+                  </table>
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" align="center"  bgcolor="#e1f2f0">
+            <tr>
+                <td class="pattern" width="600" align="center">
+                    <h3>What's New Now</h3>
+                </td>
+            </tr>
+            <tr>
+                <td class="pattern" width="600">
+                    <table cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="col" width="187" style="padding: 0 6px;">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td align="left">
+                                            <a href="http://www.twinsceramicstudio.com/products/081.html">
+                                                <img src="http://www.twinsceramicstudio.com/img/pr-img/81-1.png" width="187" alt="" style="display: block; border: 0;" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" style="font-family: arial,sans-serif; font-size: 14px; color: #333; padding-top: 10px;">
+                                            <strong>Japanese style light green plate</strong><br />$13.5 
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="col" width="187" style="padding: 0 6px;">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td align="left">
+                                            <a href="http://www.twinsceramicstudio.com/products/017.html">
+                                                <img src="http://www.twinsceramicstudio.com/img/pr-img/17-2.png" width="187" alt="" style="display: block; border: 0;" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" style="font-family: arial,sans-serif; font-size: 14px; color: #333; padding-top: 10px;">
+                                            <strong>Middle size blue ink on white plate </strong><br />
+                                            $35                                 </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="col" width="187" style="padding: 0 6px;">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td align="left">
+                                            <a href="http://www.twinsceramicstudio.com/products/020.html">
+                                                <img src="http://www.twinsceramicstudio.com/img/pr-img/20-2.png" width="187" alt="" style="display: block; border: 0;" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" style="font-family: arial,sans-serif; font-size: 14px; color: #333; padding-top: 10px;">
+                                            <strong>Blue and white colour ramp plate</strong><br />
+                                            $19
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" align="center" bgcolor="#e1f2f0">
+            <tr>
+                <td class="grid-block" width="600" style="padding-bottom: 8px;" align="center">
+                    <h3>Gallery</h3>
+                </td>
+            </tr>
+            <tr>
+                <td class="grid-block" width="600" style="padding-bottom: 8px;">
+                    <table cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="row" style="padding-top: 8px;">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td class="spacer" width="8" style="font-size: 1px;">&nbsp;</td>
+                                        <td class="section quarter"  width="200" height="144" align="center" valign="middle" style="font-family: arial,sans-serif; font-size: 14px; color: #fff;" background="http://www.twinsceramicstudio.com/emailmarket/gb/1.jpg">
+                                            <a href=""></a>
+                                        </td>
+                                        <td class="spacer" width="8" style="font-size: 1px;">&nbsp;</td>
+                                        <td class="section half" width="400" height="144" align="center" valign="middle" style="font-family: arial,sans-serif; font-size: 14px; color: #fff;"background="http://www.twinsceramicstudio.com/emailmarket/gb/2.jpg">
+                                            <a href=""></a>
+                                        </td>
+                                        <td class="spacer" width="8" style="font-size: 1px;">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="row" style="padding-top: 8px;">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td class="spacer" width="8" style="font-size: 1px;">&nbsp;</td>
+                                        <td class="section full" width="400" height="144" align="center" valign="middle" style="font-family: arial,sans-serif; font-size: 14px; color: #fff" background="http://www.twinsceramicstudio.com/emailmarket/gb/4.jpg">
+                                        </td>
+                                        <td class="spacer" width="8" style="font-size: 1px;">&nbsp;</td>
+                                        <td class="section quarter" width="200" height="144" align="center" valign="middle" style="font-family: arial,sans-serif; font-size: 14px; color: #fff;"background="http://www.twinsceramicstudio.com/emailmarket/gb/3.jpg">
+                                        </td>
+                                        <td class="spacer" width="8" style="font-size: 1px;">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="row" style="padding-top: 8px;">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tr>
+
+                                        <td class="spacer" width="8" style="font-size: 1px;">&nbsp;</td>
+                                        <td class="section half" width="200" height="144" align="center" valign="middle" style="font-family: arial,sans-serif; font-size: 14px; color: #fff;"background="http://www.twinsceramicstudio.com/emailmarket/gb/7.jpg">
+                                            8
+                                        </td>
+                                        <td class="spacer" width="8" style="font-size: 1px;">&nbsp;</td>
+                                        <td class="section full" width="400" height="144" align="center" valign="middle" style="font-family: arial,sans-serif; font-size: 14px; color: #fff;"background="http://www.twinsceramicstudio.com/emailmarket/gb/5.jpg">
+                                            9
+                                        </td>
+                                        <td class="spacer" width="8" style="font-size: 1px;">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" align="center" bgcolor="#e1f2f0">
+            <tr>
+                <td class="grid-block" width="600" style="padding-bottom: 8px;" align="center">
+                    <h3>Pre-Order</h3>
+                </td>
+            </tr>
+            <tr>
+                <td class="pattern" width="600" style="">
+                    <table cellpadding="0" cellspacing="0">
+                        <tr class="row">
+                            <td class="col" valign="top" width="600" style="padding-bottom: 20px;padding-left:10px">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td align="left" valign="top">
+                                            <a href="http://www.twinsceramicstudio.com/products/pr1.html">
+                                                <img src="http://www.twinsceramicstudio.com/img/blog-img/p4.png"  width="280" alt="" style="display: block; " />
+                                            </a>
+                                        </td>
+                                        <td align="left" valign="top" style="font-family: arial,sans-serif; font-size: 16px; color: #333; padding: 0 16px;">
+                                            <strong style="line-height: 30px !important;">Cacti set</strong>
+                                            <p id="description" style="padding-bottom: 10px; font-size: 14px;">
+                                                $65<br>Designed and made by Twins Ceramic Studio, this brand new ceramic plate is with fashion-forward colours for statement looks.
+                                            </p>
+                                            <a href="http://www.twinsceramicstudio.com/products/pr1.html" style="display: block; text-decoration: none; font-weight: bold;">Shop Now</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col" valign="top" width="600" style="padding-bottom: 20px;padding-left:10px">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td align="left" valign="top" style="font-family: arial,sans-serif; font-size: 16px; color: #333; padding: 0 16px;">
+                                            <strong style="line-height: 30px !important;">Flamingo set</strong>
+                                            <p id="description" style="padding-bottom: 10px; font-size: 14px;">
+                                                Plate:$25<br>Cup:21<br>Designed and made by Twins Ceramic Studio, this brand new ceramic plate is with fashion-forward colours for statement looks.
+                                            </p>
+                                            <a href="http://www.twinsceramicstudio.com/products/pr2.html" style="display: block; text-decoration: none; font-weight: bold;">Shop Now </a>
+                                        </td>
+                                        <td align="right" valign="middle" style="font-family: arial,sans-serif; font-size: 16px; color: #333; padding: 0 16px;">
+                                            <a href="http://www.twinsceramicstudio.com/products/pr2.html">
+                                                <img src="http://www.twinsceramicstudio.com/img/blog-img/p5.png" width="280" alt="" style="display: block; border: 0;" />
+                                            </a>
+                                            
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" align="center" style="background-color: #e1f2f0" width="600">
+           <tbody>
+
+              <tr>
+                  <td class="pattern" width="600" align="center">
+                      <h3>Follow us</h3>
+                  </td>
+              </tr>
+              <tr>
+                 <td>
+                    <table width="600" bgcolor="#e1f2f0" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                       <tbody>
+                          <tr>
+                             <td width="100%">
+                                <table bgcolor="#e1f2f0" width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                                   <tbody>
+                                      <!-- Spacing -->
+                                      <tr>
+                                         <td height="10" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                      </tr>
+                                      <!-- Spacing -->
+                                      <tr>
+                                         <td>
+                                            <!-- Social icons -->
+                                            <table  width="300" align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidth">
+                                               <tbody>
+                                                  <tr>
+                                                     <td width="43" height="43" align="center">
+                                                        <div class="imgpop">
+                                                           <a target="_blank" href="https://www.facebook.com/twinsceramic/?ref=bookmarks">
+                                                           <img src="http://www.twinsceramicstudio.com/emailmarket/sm/facebook.png" alt="" border="0" width="43" height="43" style="display:block; border:none; outline:none; text-decoration:none;">
+                                                           </a>
+                                                        </div>
+                                                     </td>
+                                                     <td align="left" width="20" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                                                     <td width="43" height="43" align="center">
+                                                        <div class="imgpop">
+                                                           <a target="_blank" href="https://www.instagram.com/twinsceramic/">
+                                                           <img src="http://www.twinsceramicstudio.com/emailmarket/sm/ins.png" alt="" border="0" width="43" height="43" style="display:block; border:none; outline:none; text-decoration:none;">
+                                                           </a>
+                                                        </div>
+                                                     </td>
+                                                     <td align="left" width="20" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                                                     <td width="43" height="43" align="center">
+                                                        <div class="imgpop">
+                                                           <a target="_blank" href="http://www.twinsceramicstudio.com/img/wechat.jpg">
+                                                           <img src="http://www.twinsceramicstudio.com/emailmarket/sm/wechat.png" alt="" border="0" width="43" height="43" style="display:block; border:none; outline:none; text-decoration:none;">
+                                                           </a>
+                                                        </div>
+                                                     </td>
+                                                     <td align="left" width="20" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                                                     <td width="43" height="43" align="center">
+                                                        <div class="imgpop">
+                                                           <a target="_blank" href="http://www.twinsceramicstudio.com/img/line.jpg">
+                                                           <img src="http://www.twinsceramicstudio.com/emailmarket/sm/line.png" alt="" border="0" width="43" height="43" style="display:block; border:none; outline:none; text-decoration:none;">
+                                                           </a>
+                                                        </div>
+                                                     </td>
+                                                     
+                                                  </tr>
+                                               </tbody>
+                                            </table>
+                                            <!-- end of Social icons -->
+                                         </td>
+                                      </tr>
+                                      <!-- Spacing -->
+                                      <tr>
+                                         <td height="10" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                      </tr>
+                                      <!-- Spacing -->
+                                   </tbody>
+                                </table>
+                             </td>
+                          </tr>
+                       </tbody>
+                    </table>
+                 </td>
+              </tr>
+           </tbody>
+        </table>
+        <table cellpadding="0" cellspacing="0" align="center" style="background-color: #e1f2f0;" >
+           <tbody>
+              <tr>
+                 <td>
+                    <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                       <tbody>
+                          <tr>
+                             <td align="center" valign="middle" style="font-family: Helvetica, arial, sans-serif; font-size: 13px;color: #282828" st-content="preheader">
+                                Don't want to receive email Updates? <a href="mailto:service@twinsceramicstudio.com?Subject=Unsubscribe" style="text-decoration: none; color: #000000">Unsubscribe here </a> 
+                             </td>
+                          </tr>
+                       </tbody>
+                    </table>
+                 </td>
+              </tr>
+           </tbody>
+        </table>
+   </body>
+</html>
